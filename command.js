@@ -1,4 +1,5 @@
 import { REST, Routes } from 'discord.js';
+const dotenv = require('dotenv').config()
 
 const commands = [
   {
@@ -7,7 +8,7 @@ const commands = [
   },
 ];
 
-const rest = new REST({ version: '10' }).setToken("MTE1NDY4MzgzNzc3NTg4NDM0OA.Gqi7ZB.zfQneOX5WrO_5zZ016l0XofOUSd8yIfPUBuyB8");
+const rest = new REST({ version: '10' }).setToken(process.env.GPT_TOKEN);
 
 try {
   console.log('Started refreshing application (/) commands.');

@@ -1,5 +1,8 @@
 import { Client, GatewayIntentBits } from 'discord.js';
 
+
+const dotenv = require('dotenv').config()
+
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
 
 client.on("messageCreate", (message) => {
@@ -15,4 +18,4 @@ client.on("interactionCreate", (interaction) => {
     interaction.reply("Pong!!")
 })
 
-client.login( "MTE1NDY4MzgzNzc3NTg4NDM0OA.Gqi7ZB.zfQneOX5WrO_5zZ016l0XofOUSd8yIfPUBuyB8")
+client.login(process.env.GPT_TOKEN)
